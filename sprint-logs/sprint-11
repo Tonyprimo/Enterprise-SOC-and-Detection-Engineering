@@ -1,0 +1,104 @@
+# Sprint 11 – Vulnerability Management & Security Assessment
+
+## Completed
+- Performed a structured vulnerability assessment across the enterprise lab environment.
+- Created an asset inventory for all lab systems:
+  - DC01
+  - SIEM01
+  - WIN11-01
+- Audited operating system versions, build numbers, installed security software, and system roles.
+- Collected and reviewed installed Windows updates and patch history.
+- Verified pending reboot status across Windows systems.
+- Audited installed software using registry-based inventory methods.
+- Evaluated Microsoft Defender health and protection status.
+- Verified Windows Defender Firewall configuration across all network profiles.
+- Reviewed local Administrator group membership for unnecessary privileged accounts.
+- Audited listening network ports and validated expected enterprise services.
+- Verified SMBv1 status across Windows systems.
+- Audited Remote Desktop configuration and Network Level Authentication (NLA).
+- Reviewed PowerShell logging configuration.
+- Created a formal vulnerability findings register.
+- Assigned risk ratings using a standardized severity model.
+- Developed a remediation plan for identified findings.
+- Remediated PowerShell Script Block Logging through Group Policy.
+- Validated remediation using PowerShell and Group Policy.
+- Updated vulnerability status following successful validation.
+- Expanded Splunk monitoring for vulnerability-related events.
+- Completed executive-level assessment documentation.
+
+## Skills Demonstrated
+- Vulnerability Management
+- Windows Security Assessment
+- Patch Management
+- Asset Inventory
+- Security Configuration Auditing
+- Microsoft Defender Administration
+- Windows Defender Firewall Validation
+- Local Privilege Review
+- PowerShell Administration
+- Group Policy Management
+- Risk Assessment
+- Remediation Planning
+- Security Validation
+- Splunk Monitoring
+- Security Documentation
+
+## Assessment Areas
+- Operating System Patch Status
+- Installed Windows Updates
+- Pending Restart Validation
+- Installed Software Inventory
+- Microsoft Defender Health
+- Windows Defender Firewall
+- Local Administrator Membership
+- Listening Network Services
+- SMBv1 Configuration
+- Remote Desktop Security
+- PowerShell Logging
+- Splunk Telemetry Validation
+
+## Findings Identified
+
+| Finding | Severity | Status |
+|---------|----------|--------|
+| VM-005 – PowerShell Script Block Logging Not Enforced | Medium | Closed |
+
+## Remediation Completed
+- Enabled PowerShell Script Block Logging through the **Workstation Hardening - Sprint 10** Group Policy.
+- Applied updated Group Policy to WIN11-01.
+- Restarted the workstation and validated policy application.
+- Confirmed Script Block Logging registry configuration.
+- Verified centralized PowerShell logging capability.
+
+## Documentation Created
+- Asset Inventory
+- Vulnerability Findings Register
+- Remediation Plan
+- Remediation Validation
+- Executive Summary
+- Vulnerability Management Overview
+- Supporting screenshots and assessment evidence
+
+## Validation Performed
+- Verified Microsoft Defender remained operational.
+- Confirmed Windows Defender Firewall configuration.
+- Reviewed installed software inventory.
+- Confirmed patch inventory collection.
+- Verified local administrative access.
+- Audited network listening services.
+- Confirmed SMBv1 configuration.
+- Reviewed Remote Desktop security configuration.
+- Validated Group Policy remediation.
+- Confirmed continued Splunk and Sysmon telemetry after remediation.
+
+## Challenges Overcome
+- Conducted a full vulnerability assessment without relying on automated scanning tools.
+- Distinguished true findings from expected enterprise configurations.
+- Prioritized findings using a risk-based methodology.
+- Safely remediated the only identified security gap through centralized Group Policy.
+- Maintained uninterrupted security monitoring throughout assessment and remediation.
+
+## Outcome
+Sprint 11 established a repeatable vulnerability management process for the enterprise lab. Assets were inventoried, security configurations were assessed, findings were documented and prioritized, remediation actions were implemented, and validation confirmed the environment remained secure and fully monitored. The lab now includes a documented vulnerability management workflow comparable to those used in enterprise security operations.
+
+**Status:**  Complete
