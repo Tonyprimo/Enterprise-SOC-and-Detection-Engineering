@@ -1,5 +1,71 @@
+# Incident Report – Sprint 12 Controlled Security Exercise
+
+## Incident ID
+IR-001
+
+## Date
+[Enter date]
+
+## Analyst
+[Your name]
+
+## Environment
+- DC01
+- WIN11-01
+- SIEM01
+- corp.lab
+
+## Executive Summary
+A controlled security exercise was conducted to simulate suspicious Windows endpoint and account-management activity. The exercise generated PowerShell, Command Prompt, Certutil, Active Directory account-creation, and local administrative-group modification telemetry.
+
+The activity was detected and investigated using Splunk, Windows Security logs, Sysmon, and PowerShell Script Block Logging.
+
+## Initial Indicators
+- PowerShell process execution
+- Windows Command Shell execution
+- Certutil execution
+- Creation of `s12_incident`
+- Addition of `s12_incident` to local Administrators
+
 ## Severity
+High
 
-**High**
+## Affected Assets
+- DC01
+- WIN11-01
 
-The incident involved account creation and local administrative-group modification. Although the activity was authorized as part of a controlled lab exercise, the same activity in production would require urgent analyst review and validation.
+## Data Sources
+- Sysmon Event ID 1
+- Sysmon Event ID 3, where available
+- PowerShell Event ID 4104
+- Windows Security Event ID 4720
+- Windows Security Event ID 4732
+- Windows Security Event ID 4726
+- Windows Security Event ID 4733
+
+## Investigation
+The analyst reviewed process-creation telemetry, PowerShell script blocks, account-management events, and local-group membership changes.
+
+The observed sequence indicated command execution followed by account creation and privilege assignment.
+
+## Findings
+- PowerShell and CMD activity originated from WIN11-01.
+- Certutil was used to hash a legitimate Windows executable.
+- A new domain account was created on DC01.
+- The account was added to the local Administrators group on WIN11-01.
+- The activity was authorized as part of the controlled exercise.
+
+## Containment
+- Removed the test account from local Administrators.
+
+## Remediation
+- Deleted the temporary Active Directory account.
+- Removed test artifacts.
+- Verified approved administrator membership.
+- Confirmed telemetry remained operational.
+
+## Disposition
+Benign – Authorized Security Exercise
+
+## Status
+Closed
