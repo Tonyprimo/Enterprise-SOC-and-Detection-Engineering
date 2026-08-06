@@ -1,0 +1,50 @@
+# Sprint 8 – Detection Engineering & Splunk Alerts
+
+## Completed
+- Developed foundational detection engineering workflow within Splunk Enterprise.
+- Created documented detections for:
+  - PowerShell Execution (DET-001)
+  - Encoded PowerShell (DET-002)
+  - Windows Command Shell (DET-003)
+  - Certutil Execution (DET-004)
+  - Multiple Failed Logons (DET-005)
+  - New User Account Creation (DET-006)
+  - Scheduled Task Creation (DET-007)
+- Mapped applicable detections to the MITRE ATT&CK framework.
+- Created a structured GitHub detection repository with individual documentation for each detection.
+- Built and validated SPL searches for each detection.
+- Created scheduled Splunk alerts for high-priority detections.
+- Expanded the SOC dashboard with detection-focused panels.
+- Practiced validating detections through controlled lab activity where applicable.
+
+## Skills Demonstrated
+- Detection Engineering
+- Splunk Alert Creation
+- Search Processing Language (SPL)
+- MITRE ATT&CK Mapping
+- Windows Event Log Analysis
+- Sysmon Detection Development
+- Security Monitoring
+- Alert Tuning Fundamentals
+- Detection Documentation
+- SOC Investigation Workflow
+
+## Detections Created
+- DET-001 – PowerShell Execution
+- DET-002 – Encoded PowerShell
+- DET-003 – Windows Command Shell
+- DET-004 – Certutil Execution
+- DET-005 – Multiple Failed Logons
+- DET-006 – New User Account Creation
+- DET-007 – Scheduled Task Creation
+
+## Challenges Overcome
+- Adapted detection logic to raw XML Windows event data.
+- Validated detections despite limited event generation for certain Windows Security events.
+- Distinguished between expected administrative activity and potentially suspicious behavior.
+- Documented detection logic, investigation guidance, and future tuning recommendations for each detection.
+
+## Outcome
+Sprint 8 expanded the lab from monitoring and visualization into detection engineering. The environment now contains documented detections, scheduled Splunk alerts, MITRE ATT&CK mappings, and standardized investigation guidance that mirrors the foundational detection development process used within enterprise SOC environments.
+
+**Status:**  Complete
