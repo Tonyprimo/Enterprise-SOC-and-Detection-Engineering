@@ -1,0 +1,18 @@
+# Executive Summary
+
+A controlled incident-response exercise was completed within the Windows enterprise security lab.
+
+The exercise simulated command-line activity, use of a dual-use Windows utility, domain-account creation, and local privilege assignment.
+
+Splunk successfully centralized relevant Windows, Sysmon, and PowerShell telemetry. The activity was investigated, correlated into a timeline, assigned a severity rating, and documented using an incident-response workflow.
+
+Containment and remediation were completed by removing privileged access, deleting the temporary account, and removing test artifacts.
+
+## Outcome
+- Incident detected
+- Evidence collected
+- Timeline created
+- Severity assigned
+- Containment completed
+- Remediation validated
+- Incident closed
