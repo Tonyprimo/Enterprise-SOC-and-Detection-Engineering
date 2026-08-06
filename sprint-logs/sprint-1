@@ -1,0 +1,27 @@
+## Sprint 1 - Windows Server Deployment
+
+### Objective
+Build the first virtual machine for the Enterprise Blue Team Lab.
+
+### Tasks Completed
+- Enabled AMD-V virtualization in BIOS.
+- Verified virtualization support in Windows.
+- Installed VMware Workstation Pro.
+- Downloaded Windows Server 2022 Evaluation.
+- Created the first Windows Server virtual machine.
+- Resolved UEFI boot issues.
+- Successfully started Windows Server installation.
+
+### Challenges
+The VM initially attempted PXE network boot because the UEFI firmware had not yet detected the mounted installation media.
+
+### Resolution
+Verified the ISO configuration and allowed the virtual DVD additional time to initialize during boot.
+
+### Lessons Learned
+- Modern virtual machines use UEFI firmware.
+- UEFI attempts multiple boot devices before launching the installer.
+- Enterprise virtualization requires careful configuration before deployment.
+
+### Next Sprint
+Complete Windows Server installation and configure the server for Active Directory.
