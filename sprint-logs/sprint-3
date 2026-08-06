@@ -210,23 +210,23 @@ This sprint introduced several foundational enterprise administration concepts:
 
 ## Active Directory
 
-- ✅ Domain Controller operational
-- ✅ DNS operational
-- ✅ SYSVOL healthy
-- ✅ NETLOGON healthy
-- ✅ DFS Replication healthy
+-  Domain Controller operational
+-  DNS operational
+-  SYSVOL healthy
+-  NETLOGON healthy
+-  DFS Replication healthy
 
 ## Identity Infrastructure
 
-- ✅ Enterprise OU hierarchy
-- ✅ Department security groups
-- ✅ Enterprise user accounts
-- ✅ Service accounts
-- ✅ Dedicated administrative account
+-  Enterprise OU hierarchy
+-  Department security groups
+-  Enterprise user accounts
+-  Service accounts
+-  Dedicated administrative account
 
 ## Virtualization
 
-- ✅ VMware baseline snapshot created
+-  VMware baseline snapshot created
 
 ---
 
@@ -249,6 +249,6 @@ This workstation will become the primary endpoint used to simulate enterprise us
 
 ## Current Project Status
 
-**Status:** 🟢 Healthy
+**Status:**  Healthy
 
 The lab has progressed from a standalone Domain Controller into a structured enterprise Active Directory environment with realistic users, groups, administrative accounts, and service accounts. The foundation is now in place to begin adding client systems, Group Policy, centralized logging, and detection engineering workflows.
