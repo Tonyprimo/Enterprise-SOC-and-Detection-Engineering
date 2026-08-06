@@ -1,0 +1,46 @@
+# Sprint 7 – SOC Dashboard & Threat Hunting
+
+## Completed
+- Verified stable log ingestion from SIEM01, DC01, and WIN11-01.
+- Resolved Universal Forwarder permissions preventing Sysmon collection (Error 5 – Access Denied).
+- Validated Windows, Sysmon, and PowerShell event forwarding.
+- Built the first SOC Overview dashboard in Splunk Dashboard Studio.
+- Created reports for host activity, index statistics, process creation, PowerShell activity, and endpoint telemetry.
+- Developed SPL searches for Windows Security, Sysmon, and PowerShell logs.
+- Generated and analyzed lab telemetry including Notepad, PowerShell, CMD, and Certutil activity.
+- Performed basic threat hunting using Sysmon process creation events.
+- Validated end-to-end telemetry from endpoint to SIEM.
+
+## Skills Demonstrated
+- Splunk Enterprise Administration
+- Dashboard Studio
+- Search Processing Language (SPL)
+- Windows Event Log Analysis
+- Sysmon Analysis
+- PowerShell Logging
+- Threat Hunting
+- SIEM Validation
+- Troubleshooting Universal Forwarders
+- Windows Security Monitoring
+
+## Key Searches Created
+- Events by Host
+- Events by Index
+- Latest Endpoint Activity
+- Sysmon Process Creation
+- PowerShell Activity
+- Windows Logon Events
+- Certutil Execution
+- Event Timeline Analysis
+
+## Challenges Overcome
+- Fixed VMware networking issue preventing forwarder communication.
+- Resolved Universal Forwarder Sysmon permission error.
+- Corrected forwarding configuration and validated active connections.
+- Troubleshot Dashboard Studio search compatibility.
+- Verified live event ingestion across all endpoints.
+
+## Outcome
+Sprint 7 transitioned the lab from infrastructure deployment into an operational SOC environment. The environment now supports dashboarding, endpoint monitoring, SPL-based investigations, and foundational threat hunting across Windows, Sysmon, and PowerShell telemetry.
+
+**Status:**  Complete
