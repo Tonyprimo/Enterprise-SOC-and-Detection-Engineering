@@ -1,0 +1,21 @@
+# Future Roadmap
+
+## Planned Improvements
+
+- Deploy Microsoft Sentinel
+- Integrate Sigma detection rules
+- Add Atomic Red Team testing
+- Expand Sysmon configuration
+- Deploy additional Windows endpoints
+- Add Linux log collection
+- Integrate Zeek or Suricata
+- Evaluate Splunk Enterprise Security
+- Develop automated threat-hunting dashboards
+- Explore SOAR integration
+
+## Long-Term Goals
+
+- Expand detection coverage across additional MITRE ATT&CK techniques.
+- Improve automation of incident response workflows.
+- Continue refining SPL detections and dashboards.
+- Extend the lab to support cloud and hybrid security monitoring.
