@@ -1,0 +1,161 @@
+# Sprint 5 – Enterprise Security Baseline & Endpoint Telemetry
+
+## Objective
+
+Transition the Active Directory lab from a basic Windows domain environment into a security-focused enterprise lab by implementing Group Policy, advanced auditing, and endpoint telemetry with Sysmon.
+
+---
+
+## Completed Tasks
+
+### Active Directory Validation
+
+Verified the Active Directory organizational structure and confirmed workstation placement.
+
+- Verified departmental Organizational Units (OUs)
+- Confirmed `WIN11-01` resides in the **Workstations** OU
+- Left built-in Active Directory containers and the **Domain Controllers** OU unchanged
+
+---
+
+### Group Policy
+
+Created and deployed the first enterprise workstation baseline.
+
+**Created GPO**
+
+- `Workstation Security Baseline`
+
+Linked the GPO to the **Workstations** OU.
+
+Configured:
+
+- Advanced Windows Audit Policy
+- Process Creation auditing
+- Account Logon auditing
+- Account Management auditing
+- Logon/Logoff auditing
+- Policy Change auditing
+- Security State auditing
+- PowerShell Module Logging
+- PowerShell Script Block Logging
+- Increased Windows Event Log sizes
+- Verified Group Policy successfully applied to `WIN11-01`
+
+---
+
+### Sysmon Deployment
+
+Installed Microsoft Sysinternals Sysmon on both systems using the SwiftOnSecurity configuration.
+
+**Systems**
+
+- DC01
+- WIN11-01
+
+Installation included:
+
+- Sysmon Service
+- Sysmon Driver
+- Enterprise Sysmon configuration
+- Configuration validation
+- Service verification
+
+Verified:
+
+- Sysmon service running
+- Sysmon Operational log available
+- Endpoint telemetry successfully generated
+
+---
+
+### Security Telemetry Validation
+
+Generated test activity including:
+
+- User logon
+- PowerShell execution
+- Process creation
+- DNS lookups
+- File creation
+- Web browsing
+- Standard Windows command execution
+
+Confirmed events were written to:
+
+- Sysmon Operational Log
+- Windows Security Log
+- PowerShell Operational Log
+
+---
+
+### VMware
+
+Created post-configuration snapshots.
+
+**DC01**
+
+- Sprint 5 - Security Baseline
+
+**WIN11-01**
+
+- Sprint 5 - Security Baseline
+
+These snapshots provide a stable restore point before SIEM deployment.
+
+---
+
+## Skills Demonstrated
+
+- Active Directory Administration
+- Organizational Units (OUs)
+- Group Policy Management
+- Windows Security Auditing
+- Advanced Audit Policy
+- PowerShell Logging
+- Sysmon Deployment
+- Endpoint Telemetry
+- Windows Event Logging
+- VMware Administration
+- Enterprise Endpoint Hardening
+- Security Baseline Configuration
+
+---
+
+## Challenges Encountered
+
+- Resolved Group Policy application verification.
+- Confirmed correct Organizational Unit placement for workstation policy inheritance.
+- Installed Sysmon using a community enterprise configuration.
+- Resolved Event Viewer permission issue when accessing the Sysmon Operational log.
+- Validated endpoint telemetry generation across both domain controller and workstation.
+
+---
+
+## Lessons Learned
+
+This sprint demonstrated how enterprise organizations establish security visibility before deploying a SIEM.
+
+Rather than collecting default Windows logs alone, enterprise environments enhance telemetry using:
+
+- Group Policy
+- Advanced Windows Auditing
+- PowerShell Logging
+- Sysmon
+
+This approach provides significantly richer forensic data for threat hunting, incident response, and detection engineering.
+
+---
+
+## Next Sprint
+
+Sprint 6 will focus on centralized log collection by deploying a Security Information and Event Management (SIEM) platform.
+
+Planned objectives:
+
+- Deploy Splunk Enterprise
+- Forward Windows Event Logs
+- Ingest Sysmon telemetry
+- Build initial dashboards
+- Create first detection searches
+- Begin detection engineering portfolio development
