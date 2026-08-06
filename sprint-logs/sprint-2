@@ -1,0 +1,250 @@
+# Sprint 2 – Building the Foundation: Active Directory Domain Controller
+
+**Date:** July 29, 2026
+
+## Objective
+
+Convert the Windows Server 2022 virtual machine into the first Domain Controller for the `corp.lab` Active Directory environment while establishing a stable networking foundation for future enterprise security projects.
+
+---
+
+# Environment
+
+| Component | Configuration |
+|-----------|---------------|
+| Hypervisor | VMware Workstation Pro |
+| Host OS | Windows 11 |
+| Guest OS | Windows Server 2022 Standard Evaluation (Desktop Experience) |
+| Domain | corp.lab |
+| Server Name | DC01 |
+| Network | VMware NAT |
+| DNS | Active Directory Integrated DNS |
+
+---
+
+# Tasks Completed
+
+## VMware Tools
+
+Installed VMware Tools to improve:
+
+- Display performance
+- Mouse integration
+- Driver support
+- Time synchronization
+- Overall VM responsiveness
+
+---
+
+## Server Configuration
+
+Configured the initial server settings:
+
+- Renamed server to **DC01**
+- Configured a static IPv4 address
+- Installed Windows Updates
+- Verified internet connectivity
+- Confirmed DNS resolution
+
+---
+
+## Network Troubleshooting
+
+During configuration, internet connectivity was lost.
+
+### Root Cause
+
+The VM had been manually assigned a static IP on an outdated VMware NAT subnet.
+
+Originally configured:
+
+```
+192.168.237.x
+```
+
+Current VMware NAT network:
+
+```
+192.168.184.x
+```
+
+The VM could no longer communicate with the default gateway.
+
+### Resolution
+
+Temporarily switched the network adapter back to DHCP to discover the current VMware NAT configuration.
+
+Obtained:
+
+- IP Address
+- Gateway
+- DNS Server
+
+Reconfigured the VM with a new static IP using the updated subnet.
+
+Verified:
+
+- Gateway connectivity
+- Internet connectivity
+- DNS resolution
+
+---
+
+## Active Directory Domain Services
+
+Installed:
+
+- Active Directory Domain Services (AD DS)
+- DNS Server
+
+Promoted **DC01** as the first Domain Controller in a new forest.
+
+Created the domain:
+
+```
+corp.lab
+```
+
+Successfully rebooted into Directory Services.
+
+---
+
+## Active Directory Verification
+
+Verified successful deployment by confirming:
+
+- Active Directory Users and Computers
+- DNS Manager
+- Server Manager
+- Domain Administrator login
+- SYSVOL share
+- NETLOGON share
+
+---
+
+# DFS Replication Troubleshooting
+
+Following promotion, `dcdiag` reported a **DFSREvent** failure.
+
+Initial investigation showed:
+
+- DFS Replication service running
+- SYSVOL shared
+- NETLOGON shared
+- Event ID **1202**
+- Warning Event ID **6016**
+
+These events occurred during initial Active Directory startup while DFS Replication was waiting for Active Directory configuration to become available.
+
+After allowing the server time to finish initialization, the following test passed successfully:
+
+```powershell
+dcdiag /test:DFSREvent
+```
+
+This confirmed DFS Replication completed initialization successfully.
+
+Although `dcdiag /q` continued reporting historical DFSR events from earlier in the day, no evidence indicated an active replication failure. The remaining warnings reflected initialization events that were still within the 24-hour event log evaluation window.
+
+---
+
+# Validation
+
+Successfully verified:
+
+- Domain Controller operational
+- DNS operational
+- Active Directory operational
+- DFS Replication operational
+- SYSVOL available
+- NETLOGON available
+- Static networking operational
+
+---
+
+# Skills Practiced
+
+- VMware Workstation administration
+- Windows Server deployment
+- Static IPv4 configuration
+- VMware NAT troubleshooting
+- Active Directory installation
+- DNS deployment
+- Domain Controller promotion
+- SYSVOL validation
+- DFS Replication troubleshooting
+- Windows Event Viewer analysis
+- `dcdiag` health validation
+
+---
+
+# Challenges Encountered
+
+### VMware NAT Network Change
+
+Problem:
+- Static IP no longer matched VMware NAT subnet.
+
+Resolution:
+- Used DHCP to identify the updated network.
+- Reconfigured the server with the correct static IP.
+
+---
+
+### DFS Replication Initialization
+
+Problem:
+- `dcdiag` reported DFS Replication errors immediately after domain promotion.
+
+Resolution:
+- Verified DFSR service status.
+- Confirmed SYSVOL and NETLOGON shares.
+- Reviewed DFS Replication event logs.
+- Allowed Active Directory initialization to complete.
+- Confirmed successful DFS Replication using `dcdiag /test:DFSREvent`.
+
+---
+
+# Lessons Learned
+
+This sprint reinforced several enterprise administration concepts:
+
+- Active Directory promotion is a multi-stage process that continues after the reboot.
+- DFS Replication may generate temporary initialization errors while waiting for Active Directory services to become fully available.
+- `dcdiag` reports both current health and recent historical events, making it important to distinguish between active failures and initialization artifacts.
+- Correct network configuration is critical before promoting a Domain Controller.
+
+---
+
+# Next Sprint
+
+Sprint 3 will focus on building the enterprise environment that will support future detection engineering work.
+
+Planned objectives:
+
+- Design an Organizational Unit (OU) structure
+- Create enterprise users and security groups
+- Build a Windows 11 client VM
+- Join the client to the `corp.lab` domain
+- Configure Group Policy Objects (GPOs)
+- Begin generating realistic Windows security events for SIEM ingestion
+
+---
+
+## Current Lab Status
+
+**Project Status:** 🟢 Healthy
+
+### Infrastructure
+
+- ✅ VMware Workstation environment
+- ✅ Windows Server 2022
+- ✅ Active Directory Domain Services
+- ✅ DNS
+- ✅ Domain Controller (DC01)
+- ✅ SYSVOL
+- ✅ NETLOGON
+- ✅ DFS Replication
+- ✅ Static networking
+
+The enterprise Active Directory foundation is now complete and ready for client systems, Group Policy, logging, and security monitoring.
