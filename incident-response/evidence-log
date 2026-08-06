@@ -1,0 +1,9 @@
+# Evidence Log
+
+| Evidence ID | Source | Description | Collected By | Integrity Notes |
+|---|---|---|---|---|
+| EV-001 | Splunk PowerShell index | PowerShell script block activity | Lab Analyst | Screenshot retained |
+| EV-002 | Splunk Sysmon index | Process creation timeline | Lab Analyst | Raw XML reviewed |
+| EV-003 | Splunk Sysmon index | Certutil execution | Lab Analyst | Command line verified |
+| EV-004 | Splunk Windows index | New account creation | Lab Analyst | Event ID 4720 reviewed |
+| EV-005 | Splunk Windows index | Local Administrators membership change | Lab Analyst | Event ID 4732 reviewed |
