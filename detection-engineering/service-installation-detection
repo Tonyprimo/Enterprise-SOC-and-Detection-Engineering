@@ -1,0 +1,37 @@
+# DET-005 – Multiple Failed Logons
+
+## Purpose
+Detect multiple failed Windows logon attempts within a short period of time.
+
+## MITRE ATT&CK
+Credential Access (Brute Force)
+
+## Data Source
+- Windows Security Event Log
+- Event ID 4625
+
+## Detection Logic
+
+```spl
+index=windows sourcetype="XmlWinEventLog:Security" "<EventID>4625</EventID>"
+| bin _time span=5m
+| stats count AS FailedAttempts BY _time host
+| where FailedAttempts >= 3
+```
+
+## Expected Benign Activity
+- User mistyping a password
+- Recently changed passwords
+- Cached credentials
+- Service accounts using an outdated password
+
+## Potentially Suspicious Activity
+- Password spraying
+- Brute-force attempts
+- Repeated authentication failures from the same endpoint
+
+## Validation
+Unable to generate Event ID 4625 in the current lab environment. Detection logic and search syntax were verified, but no test events were produced.
+
+## Status
+Detection created and ready for future validation.
