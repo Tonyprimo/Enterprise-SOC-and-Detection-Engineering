@@ -1,0 +1,36 @@
+# PowerShell Execution
+
+## Detection ID
+DET-001
+
+## Description
+Identifies PowerShell process creation on monitored Windows endpoints.
+
+## Data Source
+- Microsoft Sysmon
+- Event ID 1: Process Creation
+
+## MITRE ATT&CK
+- T1059.001 — PowerShell
+
+## Detection Logic
+Searches for Sysmon process-creation events containing powershell.exe.
+
+## Expected Benign Activity
+- Administrative scripts
+- Troubleshooting commands
+- Software installation
+- IT automation
+
+## Potentially Suspicious Activity
+- Encoded commands
+- Hidden PowerShell windows
+- Downloads from external locations
+- Execution from unusual parent processes
+- Commands launched by Office applications
+
+## Validation
+Tested using benign PowerShell commands on WIN11-01.
+
+## Status
+Operational — requires tuning.
