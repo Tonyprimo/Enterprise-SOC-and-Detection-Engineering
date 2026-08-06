@@ -1,0 +1,17 @@
+# Containment and Remediation
+
+## Containment Actions
+- Removed `CORP\s12_incident` from the local Administrators group on WIN11-01.
+- Prevented continued privileged access by the temporary account.
+
+## Remediation Actions
+- Deleted the `s12_incident` Active Directory account.
+- Removed the Sprint 12 test files from WIN11-01.
+- Verified the local Administrators group returned to its approved membership.
+- Confirmed Microsoft Defender, Sysmon, and Splunk forwarding remained operational.
+
+## Validation
+- Temporary account no longer exists in Active Directory.
+- Temporary account is no longer a local administrator.
+- Test files were removed.
+- Security telemetry continued reaching SIEM01.
