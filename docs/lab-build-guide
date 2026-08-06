@@ -1,0 +1,31 @@
+# Lab Build Guide
+
+## Environment
+
+- VMware Workstation Pro
+- Three virtual machines
+- NAT networking
+
+## Build Sequence
+
+1. Deploy Windows Server 2022
+2. Configure Active Directory
+3. Configure DNS
+4. Create Organizational Units
+5. Join Windows 11 workstation to the domain
+6. Deploy Sysmon
+7. Configure Windows auditing
+8. Install Splunk Enterprise
+9. Install Splunk Universal Forwarders
+10. Validate centralized logging
+11. Develop detections
+12. Perform vulnerability assessment
+13. Execute incident response exercise
+
+## Validation
+
+- Domain authentication successful
+- Sysmon operational
+- Windows Security logs collected
+- PowerShell logging enabled
+- Splunk receiving telemetry
