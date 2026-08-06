@@ -1,0 +1,75 @@
+# Troubleshooting Guide
+
+## Universal Forwarder Not Sending Logs
+
+### Symptoms
+
+- Missing host in Splunk
+- No recent events
+
+### Resolution
+
+- Verified SplunkForwarder service
+- Confirmed receiving server configuration
+- Verified TCP port 9997 connectivity
+- Corrected inputs.conf configuration
+- Restarted Universal Forwarder
+
+---
+
+## VMware Networking Issues
+
+### Symptoms
+
+- Unable to ping between virtual machines
+
+### Resolution
+
+- Verified NAT configuration
+- Restarted VMware networking
+- Confirmed Windows Firewall rules
+- Validated IP addressing
+
+---
+
+## Sysmon Events Missing
+
+### Symptoms
+
+- Event ID 1 not appearing in Splunk
+
+### Resolution
+
+- Verified Sysmon service
+- Confirmed Sysmon event channel
+- Validated Universal Forwarder inputs
+- Restarted Splunk services
+
+---
+
+## PowerShell Logging Not Enabled
+
+### Symptoms
+
+- Missing Event ID 4104
+
+### Resolution
+
+- Updated Group Policy
+- Executed gpupdate /force
+- Restarted workstation
+- Verified registry configuration
+
+---
+
+## Time Synchronization
+
+### Symptoms
+
+- Event timestamps did not align
+
+### Resolution
+
+- Compared Event Viewer and Splunk timestamps
+- Adjusted investigation time ranges
+- Verified recent telemetry ingestion
