@@ -1,0 +1,10 @@
+# Incident Timeline
+
+| Time | Host | Event | Evidence | Assessment |
+|---|---|---|---|---|
+| 11:27 | WIN11-01 | PowerShell launched | Sysmon Event ID 1 | Initial command execution |
+| 11:40 | WIN11-01 | PowerShell commands executed | Event ID 4104 | System discovery |
+| 11:40 | WIN11-01 | CMD commands executed | Sysmon Event ID 1 | Command-shell activity |
+| 11:31 | WIN11-01 | Certutil hashed notepad.exe | Sysmon Event ID 1 | Benign dual-use tool activity |
+| 11:32 | DC01 | Account `s12_incident` created | Security Event ID 4720 | Account creation |
+| 11:33 | WIN11-01 | Account added to local Administrators | Security Event ID 4732 | Privilege change |
