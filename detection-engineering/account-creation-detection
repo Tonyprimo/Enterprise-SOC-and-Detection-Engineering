@@ -1,0 +1,59 @@
+# DET-006 – New User Account Created
+
+## Purpose
+Detect the creation of new user accounts within the Active Directory environment.
+
+## MITRE ATT&CK
+T1136 – Create Account
+
+## Data Source
+- Windows Security Event Log
+- Event ID 4720
+
+## Detection Logic
+
+```spl
+index=windows host=DC01 "<EventID>4720</EventID>"
+```
+
+## Why This Detection Matters
+Attackers frequently create new user accounts after compromising a system to maintain persistence or establish additional access. Detecting new account creation can identify unauthorized administrative activity.
+
+## Expected Benign Activity
+- Help desk creating new employee accounts
+- Administrator provisioning service accounts
+- Lab account creation
+- User onboarding
+
+## Potentially Suspicious Activity
+- Accounts created outside normal business hours
+- Unexpected administrator account creation
+- Accounts created by unusual users
+- Multiple account creations in a short period
+
+## Validation
+
+### Test Performed
+Created a temporary Active Directory user account:
+
+```
+s8_testuser
+```
+
+Verified Event ID 4720 was ingested into Splunk.
+
+Deleted the temporary account after validation.
+
+## Investigation Notes
+Review the following when this detection triggers:
+
+- Who created the account?
+- Which system generated the event?
+- Was the account expected?
+- Was the account immediately added to privileged groups?
+- Was the activity approved through change management?
+
+## Future Improvements
+- Alert only on privileged account creation.
+- Exclude known administrative service accounts.
+- Correlate with group membership changes
