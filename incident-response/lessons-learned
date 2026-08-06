@@ -1,0 +1,21 @@
+# Lessons Learned
+
+## What Worked
+- Sysmon provided detailed process-creation telemetry.
+- PowerShell Script Block Logging provided command visibility.
+- Splunk enabled centralized investigation across multiple hosts.
+- Detection documentation accelerated event searches.
+- Group Policy maintained consistent endpoint protections.
+
+## Challenges
+- Raw XML fields required custom SPL extraction.
+- Some Windows Security events depended on audit-policy coverage.
+- Time-zone differences required careful timeline validation.
+- VM resource constraints occasionally affected networking and ingestion.
+
+## Improvements
+- Improve field extraction for Windows and Sysmon events.
+- Create scheduled alerts for account creation and privilege changes.
+- Add dashboard panels for incident timelines.
+- Establish consistent time synchronization checks.
+- Expand incident-response testing with additional controlled scenarios.
