@@ -1,0 +1,89 @@
+# Sprint 4 – Windows 11 Enterprise Domain Workstation
+
+## Objective
+Deploy a Windows 11 Enterprise workstation, integrate it into the Active Directory environment, and verify domain authentication and Group Policy functionality.
+
+## Completed Tasks
+
+### Windows 11 Enterprise Deployment
+- Created a new Windows 11 Enterprise virtual machine in VMware Workstation.
+- Configured:
+  - UEFI firmware
+  - Virtual TPM
+  - NVMe virtual disk
+  - NAT networking (VMnet8)
+  - 8 GB RAM
+  - 2 vCPUs
+- Successfully completed Windows installation after troubleshooting installation and boot issues.
+
+### VMware Configuration
+- Installed VMware Tools.
+- Renamed workstation to **WIN11-01**.
+- Migrated virtual machines and ISOs to a dedicated external SSD.
+- Verified VMware snapshots and VM integrity after migration.
+
+### Networking
+- Verified DHCP connectivity.
+- Configured DNS to use the Active Directory Domain Controller (DC01).
+- Verified:
+  - Network connectivity
+  - DNS resolution
+  - Communication with the domain controller
+
+### Active Directory Integration
+- Joined **WIN11-01** to the **corp.lab** domain.
+- Authenticated successfully using a domain user account.
+- Verified workstation communication with Active Directory.
+- Confirmed Group Policy processing completed successfully.
+
+### Validation
+Verified:
+- Domain authentication
+- DNS functionality
+- Domain connectivity
+- Workstation naming
+- Active Directory integration
+
+### Snapshot
+Created VMware snapshot:
+
+**Sprint 4 - Domain Joined Workstation**
+
+This snapshot serves as the baseline prior to deploying security monitoring and detection tooling.
+
+---
+
+# Skills Demonstrated
+
+- VMware Workstation
+- Windows 11 Enterprise
+- Active Directory
+- DNS Configuration
+- Domain Joining
+- Windows Networking
+- Enterprise Workstation Deployment
+- Group Policy Validation
+- Virtual TPM
+- UEFI Configuration
+- Virtual Machine Administration
+
+---
+
+# Challenges Encountered
+
+- Resolved VMware EFI boot timeout during installation.
+- Corrected Windows installation after an interrupted setup.
+- Troubleshot VMware NAT networking and DNS configuration.
+- Migrated the entire virtualization environment to an external SSD while preserving snapshots and VM identity.
+
+---
+
+# Next Sprint
+
+Sprint 5 will focus on building the security monitoring foundation by:
+
+- Deploying Sysmon
+- Creating baseline Group Policy Objects (GPOs)
+- Generating Windows security events
+- Preparing centralized logging
+- Beginning detection engineering
