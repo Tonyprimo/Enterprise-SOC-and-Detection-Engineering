@@ -1,0 +1,33 @@
+# Project Overview
+
+## Purpose
+
+The Enterprise SOC & Detection Engineering Lab was designed to simulate the deployment and operation of an enterprise Windows environment monitored by a centralized Security Information and Event Management (SIEM) platform.
+
+The project demonstrates practical skills used by Security Operations Center (SOC) analysts, detection engineers, and blue team defenders.
+
+## Goals
+
+- Deploy Active Directory
+- Configure enterprise Windows endpoints
+- Centralize Windows logging
+- Implement Sysmon
+- Develop Splunk detections
+- Perform threat hunting
+- Conduct vulnerability assessments
+- Execute an incident response investigation
+
+## Environment
+
+- VMware Workstation Pro
+- Windows Server 2022
+- Windows 11 Enterprise
+- Splunk Enterprise
+- Sysmon
+- Active Directory
+- Group Policy
+
+## Outcome
+
+A fully documented enterprise security lab demonstrating SOC operations, detection engineering, vulnerability management, and incident response.
+
