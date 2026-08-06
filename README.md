@@ -36,6 +36,17 @@ The project emphasizes real-world SOC workflows including:
 
 ---
 
+## Repository Contents
+
+-  [Architecture](architecture/)
+-  [Detection Engineering](detection-engineering/)
+-  [Vulnerability Management](vulnerability-management/)
+-  [Incident Response](incident-response/)
+-  [Sprint Logs](sprint-logs/)
+-  [Screenshots](screenshots/)
+
+---
+
 # Lab Architecture
 
 ```
