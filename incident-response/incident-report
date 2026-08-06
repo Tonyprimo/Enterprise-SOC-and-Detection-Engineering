@@ -1,0 +1,5 @@
+## Severity
+
+**High**
+
+The incident involved account creation and local administrative-group modification. Although the activity was authorized as part of a controlled lab exercise, the same activity in production would require urgent analyst review and validation.
