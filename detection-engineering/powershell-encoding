@@ -1,0 +1,38 @@
+# DET-002 – Encoded PowerShell
+
+## Purpose
+Detect potential use of Base64-encoded PowerShell commands.
+
+## MITRE ATT&CK
+T1059.001 – Command and Scripting Interpreter: PowerShell
+
+## Data Source
+- Sysmon Event ID 1
+
+## SPL
+
+```spl
+index=sysmon host=WIN11-01 powershell.exe
+("-enc" OR "-encodedcommand")
+```
+
+## Why this matters
+
+Attackers frequently use encoded PowerShell to hide malicious commands from defenders.
+
+## False Positives
+
+- Administrative automation
+- Legitimate software deployment
+- Enterprise management tools
+
+## Test Performed
+
+No encoded PowerShell executed during this sprint.
+
+Detection validated syntactically.
+
+## Future Improvements
+
+- Alert only when parent process is Office or Explorer.
+- Exclude known administrative scripts.
