@@ -1,0 +1,193 @@
+# Sprint 6 – Splunk Enterprise SIEM Deployment
+
+## Objective
+
+Deploy a centralized Security Information and Event Management (SIEM) platform to collect, store, and analyze security telemetry from the Active Directory environment.
+
+---
+
+## Completed Tasks
+
+### SIEM Server Deployment
+
+Created a dedicated Windows Server 2022 virtual machine for the SIEM.
+
+Configured:
+
+- Installed Windows Server 2022 Desktop Experience
+- Installed VMware Tools
+- Renamed server to `SIEM01`
+- Joined `SIEM01` to the `corp.lab` domain
+- Moved server into the **Servers** Organizational Unit
+- Configured DNS using the domain controller
+- Verified domain authentication and connectivity
+
+---
+
+### Splunk Enterprise Installation
+
+Installed Splunk Enterprise 10.4.2.
+
+Configured:
+
+- Splunk Web
+- Splunk Management Service
+- Splunk Administrator Account
+- Enabled receiving on TCP Port **9997**
+- Created Windows Firewall rule allowing inbound TCP 9997
+
+Verified:
+
+- Splunk service running
+- Splunk Web accessible
+- Internal Splunk events searchable
+
+---
+
+### Index Configuration
+
+Created dedicated indexes for lab telemetry.
+
+Indexes:
+
+- `windows`
+- `sysmon`
+- `powershell`
+
+Verified successful index creation.
+
+---
+
+### Universal Forwarder Deployment
+
+Installed Splunk Universal Forwarder on:
+
+- DC01
+- WIN11-01
+
+Configured both systems to forward logs to SIEM01 over TCP 9997.
+
+Verified:
+
+- Forwarder service running
+- Active connection to Splunk receiver
+- Successful communication with SIEM01
+
+---
+
+### Windows Event Collection
+
+Configured event collection using `inputs.conf`.
+
+Collected logs:
+
+- Security
+- System
+- Application
+- Microsoft-Windows-Sysmon/Operational
+- Microsoft-Windows-PowerShell/Operational
+
+Restarted the Universal Forwarder and validated configuration.
+
+---
+
+### Security Telemetry Validation
+
+Generated endpoint activity including:
+
+- User logons
+- Process execution
+- DNS queries
+- PowerShell execution
+- Windows system activity
+
+Confirmed successful ingestion into Splunk.
+
+Verified telemetry from:
+
+- DC01
+- WIN11-01
+
+---
+
+### Troubleshooting
+
+Resolved multiple deployment issues including:
+
+- VMware Tools installation conflict
+- Splunk Web Index page rendering issue
+- Incorrect creation of `inputs.conf` as a directory
+- Incorrect `.txt` file extension on configuration file
+- Missing Sysmon telemetry until local events were generated
+- Universal Forwarder configuration validation
+
+---
+
+### VMware
+
+Created post-deployment snapshots.
+
+**DC01**
+
+- Sprint 6 - Splunk Forwarder Connected
+
+**WIN11-01**
+
+- Sprint 6 - Splunk Forwarder Connected
+
+**SIEM01**
+
+- Sprint 6 - Splunk SIEM Operational
+
+These snapshots provide a stable restore point before beginning detection engineering.
+
+---
+
+## Skills Demonstrated
+
+- SIEM Deployment
+- Splunk Enterprise Administration
+- Splunk Universal Forwarder
+- Windows Event Log Collection
+- Windows Server Administration
+- Active Directory Integration
+- Sysmon Deployment
+- Endpoint Telemetry
+- Windows Firewall Configuration
+- PowerShell Administration
+- Security Monitoring
+- Enterprise Troubleshooting
+
+---
+
+## Challenges Encountered
+
+- Rebuilt the SIEM virtual machine after VMware Tools installation issues.
+- Resolved Splunk Web administrative interface issues affecting the Indexes page.
+- Corrected Universal Forwarder configuration after mistakenly creating `inputs.conf` as a directory.
+- Corrected Windows file extension issue (`inputs.conf.txt`).
+- Validated Sysmon event generation prior to forwarding.
+- Confirmed successful centralized log ingestion from multiple hosts.
+
+---
+
+## Lessons Learned
+
+This sprint introduced the core components of a Security Operations Center (SOC) by centralizing Windows security telemetry into a SIEM.
+
+Key concepts learned include:
+
+- Splunk Enterprise deployment
+- Universal Forwarder architecture
+- Windows Event Log ingestion
+- Sysmon telemetry collection
+- Centralized security monitoring
+- Log pipeline troubleshooting
+
+The environment is now capable of supporting threat hunting, detection engineering, dashboard creation, and incident response exercises.
+
+---
+
+## Next Sprint
+
+Sprint 7 will focus on building the first SOC dashboards and developing SPL searches for Windows security events, Sysmon telemetry, and PowerShell activity. Detection engineering concepts will be introduced by creating searches for common attacker behaviors and validating them against the collected telemetry.
