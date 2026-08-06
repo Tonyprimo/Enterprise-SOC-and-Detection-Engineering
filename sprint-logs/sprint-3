@@ -1,0 +1,254 @@
+# Sprint 3 – Enterprise Active Directory Foundation
+
+**Date:** July 30, 2026
+
+## Objective
+
+Transform the newly deployed Active Directory domain into a structured enterprise environment by implementing organizational units, security groups, user accounts, service accounts, and administrative best practices.
+
+---
+
+# Environment
+
+| Component | Configuration |
+|-----------|---------------|
+| Hypervisor | VMware Workstation Pro |
+| Host OS | Windows 11 |
+| Guest OS | Windows Server 2022 Standard Evaluation |
+| Domain | corp.lab |
+| Domain Controller | DC01 |
+
+---
+
+# Tasks Completed
+
+## Organizational Unit (OU) Design
+
+Designed and implemented an enterprise-style Organizational Unit hierarchy to support future administration, Group Policy, and delegated management.
+
+Created the following structure:
+
+```text
+corp.lab
+
+└── Corp
+    ├── Administration
+    ├── IT
+    ├── HR
+    ├── Finance
+    ├── Engineering
+    ├── Servers
+    ├── Workstations
+    ├── Service Accounts
+    └── Groups
+```
+
+This layout mirrors common enterprise Active Directory environments and provides logical separation of users, computers, administrative objects, and service accounts.
+
+---
+
+## Security Groups
+
+Created Global Security Groups for departmental access control.
+
+Groups created:
+
+- GG-IT
+- GG-HR
+- GG-Finance
+- GG-Engineering
+- GG-Admins
+
+These groups will later be used for:
+
+- Group Policy targeting
+- File permissions
+- Role-based access control (RBAC)
+- Security monitoring
+
+---
+
+## User Accounts
+
+Created enterprise user accounts for multiple departments.
+
+| Department | User |
+|------------|------|
+| IT | Tony Primerano (`tprimerano`) |
+| IT | Alex Carter (`acarter`) |
+| HR | Sarah Jones (`sjones`) |
+| Finance | Emily Chen (`echen`) |
+| Engineering | Michael Davis (`mdavis`) |
+
+Configured users with temporary passwords and appropriate department assignments.
+
+---
+
+## Group Memberships
+
+Assigned users to their corresponding departmental security groups.
+
+Example:
+
+- tprimerano → GG-IT
+- acarter → GG-IT
+- sjones → GG-HR
+- echen → GG-Finance
+- mdavis → GG-Engineering
+
+This establishes role-based security that will later support permission assignments and security event generation.
+
+---
+
+## Service Accounts
+
+Created dedicated service accounts to support future enterprise applications.
+
+Accounts created:
+
+- svc_sql
+- svc_backup
+- svc_monitoring
+
+Configured each account as a non-interactive service account with:
+
+- Password does not expire
+- User cannot change password
+- No password change required at first logon
+
+These accounts will later be used for services such as SIEM components, backup software, and monitoring tools to generate realistic Windows authentication and service log events.
+
+---
+
+## Administrative Account
+
+Created a dedicated administrative user account instead of relying on the built-in Administrator account.
+
+Administrative account:
+
+- tadmin
+
+Granted membership to:
+
+- Domain Admins
+- Enterprise Admins
+- Schema Admins (lab environment only)
+
+This follows enterprise administration best practices by reserving the built-in Administrator account for emergency recovery while using a dedicated administrative identity for daily management.
+
+---
+
+## Group Policy Preparation
+
+Verified that Group Policy Management Console (GPMC) was available.
+
+Created a baseline Group Policy Object:
+
+```
+Baseline Workstation Policy
+```
+
+Configuration will occur after Windows client systems join the domain.
+
+---
+
+## Environment Validation
+
+Verified successful operation of:
+
+- Active Directory Users and Computers
+- DNS Manager
+- Group Policy Management
+- Active Directory Administrative Center
+
+Confirmed that the Active Directory environment remained healthy following Sprint 2's Domain Controller deployment.
+
+---
+
+## Virtual Machine Snapshot
+
+Created a VMware snapshot to establish a stable rollback point.
+
+Snapshot name:
+
+```
+Sprint 3 - Active Directory Foundation
+```
+
+This snapshot preserves a fully functional enterprise directory before introducing Windows client systems and security tooling.
+
+---
+
+# Skills Practiced
+
+- Active Directory administration
+- Organizational Unit design
+- Security group management
+- User provisioning
+- Service account management
+- Role-Based Access Control (RBAC)
+- Administrative account separation
+- Group Policy preparation
+- VMware snapshot management
+- Enterprise identity management
+
+---
+
+# Enterprise Concepts Learned
+
+This sprint introduced several foundational enterprise administration concepts:
+
+- Organizational Units provide logical separation and simplify Group Policy deployment.
+- Security Groups enable scalable role-based access control rather than assigning permissions directly to users.
+- Service Accounts allow enterprise applications to authenticate securely without using personal user accounts.
+- Dedicated administrative accounts reduce operational risk and improve accountability.
+- Snapshot management provides safe rollback points before major infrastructure changes.
+
+---
+
+# Current Lab Status
+
+## Active Directory
+
+- ✅ Domain Controller operational
+- ✅ DNS operational
+- ✅ SYSVOL healthy
+- ✅ NETLOGON healthy
+- ✅ DFS Replication healthy
+
+## Identity Infrastructure
+
+- ✅ Enterprise OU hierarchy
+- ✅ Department security groups
+- ✅ Enterprise user accounts
+- ✅ Service accounts
+- ✅ Dedicated administrative account
+
+## Virtualization
+
+- ✅ VMware baseline snapshot created
+
+---
+
+# Next Sprint
+
+Sprint 4 will expand the environment by introducing the first domain-joined workstation.
+
+Planned objectives:
+
+- Deploy Windows 11 Enterprise
+- Join the workstation to the `corp.lab` domain
+- Verify DNS and Active Directory communication
+- Authenticate using domain user accounts
+- Apply baseline Group Policy
+- Generate Windows authentication and security events
+
+This workstation will become the primary endpoint used to simulate enterprise user activity and produce realistic telemetry for future SIEM ingestion and detection engineering exercises.
+
+---
+
+## Current Project Status
+
+**Status:** 🟢 Healthy
+
+The lab has progressed from a standalone Domain Controller into a structured enterprise Active Directory environment with realistic users, groups, administrative accounts, and service accounts. The foundation is now in place to begin adding client systems, Group Policy, centralized logging, and detection engineering workflows.
