@@ -1,0 +1,87 @@
+# Sprint 10 – Windows Group Policy Hardening & Endpoint Security
+
+## Completed
+- Created a dedicated Group Policy Object (GPO) named **Workstation Hardening - Sprint 10**.
+- Linked the GPO to the **Workstations** Organizational Unit (OU).
+- Configured Microsoft Defender Antivirus security policies.
+- Enabled Microsoft Defender Real-Time Protection.
+- Enabled Defender Behavior Monitoring.
+- Enabled scanning of downloaded files and attachments.
+- Configured scheduled antivirus scanning.
+- Configured Windows Defender Firewall for Domain, Private, and Public profiles.
+- Enforced inbound firewall protection while preserving outbound communication.
+- Verified continued Splunk Universal Forwarder communication after firewall policy changes.
+- Configured automatic Windows Update installation policies.
+- Prevented automatic reboot while users are logged in.
+- Configured removable storage write restrictions through Group Policy.
+- Managed local Administrator membership using Group Policy Preferences.
+- Configured User Account Control (UAC) security settings.
+- Applied the new Group Policy to WIN11-01.
+- Validated Group Policy deployment using `gpresult`.
+- Verified Microsoft Defender configuration through PowerShell.
+- Verified Windows Firewall status through PowerShell.
+- Verified local administrator membership.
+- Confirmed Splunk Universal Forwarder and Sysmon remained operational after hardening.
+- Generated post-hardening Windows and Sysmon telemetry.
+- Verified security telemetry continued flowing into Splunk.
+- Backed up the completed Group Policy Object.
+- Created VMware snapshots documenting the hardened baseline.
+
+## Skills Demonstrated
+- Active Directory Administration
+- Group Policy Management
+- Windows Endpoint Hardening
+- Microsoft Defender Administration
+- Windows Defender Firewall Configuration
+- Windows Update Policy Management
+- Removable Storage Security
+- User Account Control (UAC)
+- Local Administrator Management
+- Windows Security Validation
+- PowerShell Administration
+- Splunk Telemetry Validation
+- Security Baseline Deployment
+- Enterprise Endpoint Hardening
+
+## Security Controls Implemented
+- Microsoft Defender Antivirus
+- Real-Time Protection
+- Behavior Monitoring
+- Downloaded File Scanning
+- Scheduled Antivirus Scans
+- Windows Defender Firewall
+- Automatic Windows Updates
+- Restart Protection for Logged-On Users
+- Removable Storage Write Restrictions
+- Controlled Local Administrator Membership
+- User Account Control (UAC) Hardening
+
+## Validation Performed
+- Confirmed Group Policy successfully applied to WIN11-01.
+- Verified Microsoft Defender remained enabled after policy deployment.
+- Verified Windows Firewall remained enabled across all profiles.
+- Confirmed administrative elevation functioned correctly.
+- Confirmed Splunk Universal Forwarder maintained connectivity.
+- Confirmed Sysmon telemetry continued to populate Splunk.
+- Verified endpoint security configuration through PowerShell.
+- Confirmed security monitoring remained operational after hardening.
+
+## Documentation Created
+- Workstation Hardening Baseline
+- Hardening Validation Report
+- GPO Backup
+- Updated security documentation
+- Supporting screenshots
+- VMware snapshots of hardened environment
+
+## Challenges Overcome
+- Applied enterprise security policies without disrupting Active Directory functionality.
+- Preserved Splunk log forwarding while enabling Windows Firewall protections.
+- Validated Defender configuration using PowerShell despite differing property names.
+- Ensured endpoint hardening did not interrupt Sysmon telemetry collection.
+- Successfully balanced security controls with continued administrative usability.
+
+## Outcome
+Sprint 10 transformed the lab from a monitored Windows environment into a centrally managed and security-hardened enterprise workstation. Using Active Directory Group Policy, standardized endpoint security controls were deployed and validated while maintaining full visibility through Splunk and Sysmon. The lab now closely reflects the baseline security configuration commonly found in enterprise Windows environments.
+
+**Status:**  Complete
