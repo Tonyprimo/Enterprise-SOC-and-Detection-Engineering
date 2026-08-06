@@ -233,18 +233,18 @@ Planned objectives:
 
 ## Current Lab Status
 
-**Project Status:** 🟢 Healthy
+**Project Status:**  Healthy
 
 ### Infrastructure
 
-- ✅ VMware Workstation environment
-- ✅ Windows Server 2022
-- ✅ Active Directory Domain Services
-- ✅ DNS
-- ✅ Domain Controller (DC01)
-- ✅ SYSVOL
-- ✅ NETLOGON
-- ✅ DFS Replication
-- ✅ Static networking
+-  VMware Workstation environment
+-  Windows Server 2022
+-  Active Directory Domain Services
+-  DNS
+-  Domain Controller (DC01)
+-  SYSVOL
+-  NETLOGON
+-  DFS Replication
+-  Static networking
 
 The enterprise Active Directory foundation is now complete and ready for client systems, Group Policy, logging, and security monitoring.
