@@ -1,0 +1,134 @@
+# Sprint 12 – Incident Response & Portfolio Completion
+
+## Completed
+
+- Performed a complete end-to-end incident response exercise within the enterprise lab environment.
+- Verified Splunk Enterprise was receiving Windows, Sysmon, and PowerShell telemetry from domain systems.
+- Captured pre-incident snapshots of all virtual machines.
+- Generated controlled security events for investigation, including:
+  - PowerShell execution
+  - Windows Command Prompt execution
+  - Certutil execution
+  - Active Directory account creation
+  - Local Administrator group modification
+- Investigated security events using Splunk Enterprise.
+- Correlated Windows Security, Sysmon, and PowerShell logs into a unified investigation timeline.
+- Collected and documented evidence supporting the simulated incident.
+- Assigned incident severity using a structured triage methodology.
+- Performed containment by removing privileged access from the temporary account.
+- Performed remediation by deleting the temporary Active Directory account and cleaning up test artifacts.
+- Validated successful remediation and confirmed continued log ingestion.
+- Completed technical and executive incident documentation.
+- Finalized project architecture documentation.
+- Organized the GitHub repository into professional documentation sections.
+- Prepared the project for public portfolio presentation.
+
+---
+
+# Skills Demonstrated
+
+- Incident Response
+- Security Investigation
+- Threat Hunting
+- Event Correlation
+- Windows Event Analysis
+- Sysmon Analysis
+- PowerShell Logging Analysis
+- Active Directory Administration
+- Splunk Enterprise
+- SPL Query Development
+- Evidence Collection
+- Timeline Reconstruction
+- Security Documentation
+- Executive Reporting
+- Containment & Remediation
+- SOC Investigation Workflow
+
+---
+
+# Simulated Attack Activity
+
+- PowerShell execution
+- Windows Command Prompt execution
+- Certutil execution
+- Active Directory account creation
+- Local Administrator privilege assignment
+- Administrative cleanup and validation
+
+---
+
+# Investigation Activities
+
+- Verified Windows Security event ingestion.
+- Reviewed Sysmon process creation telemetry.
+- Investigated PowerShell Script Block Logging.
+- Correlated endpoint activity across multiple data sources.
+- Built a chronological incident timeline.
+- Identified affected systems and accounts.
+- Validated detection coverage for simulated activity.
+
+---
+
+# Evidence Collected
+
+- PowerShell execution logs
+- Sysmon process creation events
+- Windows Security account management events
+- Local Administrator group modification events
+- Incident timeline
+- Splunk investigation screenshots
+- Executive incident summary
+
+---
+
+# Containment & Remediation
+
+- Removed the temporary account from the local Administrators group.
+- Deleted the temporary Active Directory account.
+- Removed all Sprint 12 test artifacts.
+- Verified the environment returned to a secure baseline.
+- Confirmed continued Splunk telemetry following remediation.
+
+---
+
+# Documentation Produced
+
+- Incident Response README
+- Incident Report
+- Incident Timeline
+- Evidence Log
+- Containment & Remediation Plan
+- Executive Summary
+- Lessons Learned
+- Updated Architecture Documentation
+- Final GitHub Repository Structure
+
+---
+
+# Portfolio Completion
+
+- Finalized enterprise architecture documentation.
+- Completed Detection Engineering documentation.
+- Completed Vulnerability Management documentation.
+- Completed Incident Response documentation.
+- Organized Sprint documentation.
+- Added project licensing and repository configuration.
+- Prepared repository for public GitHub publication.
+
+---
+
+# Challenges Overcome
+
+- Correlated telemetry across multiple Windows logging sources.
+- Validated detection coverage using controlled attack simulations.
+- Troubleshot log collection and field extraction throughout the project.
+- Maintained centralized visibility while performing remediation.
+- Produced documentation suitable for both technical and executive audiences.
+
+---
+
+# Outcome
+
+Sprint 12 completed the Enterprise SOC & Detection Engineering Lab by demonstrating a full incident response lifecycle within an enterprise Windows environment. The exercise included detection, investigation, evidence collection, timeline reconstruction, containment, remediation, validation, and executive reporting. The project concluded with a fully documented GitHub portfolio showcasing enterprise Active Directory administration, Splunk SIEM implementation, detection engineering, vulnerability management, and incident response.
+
+**Status:**  Complete
