@@ -1,0 +1,10 @@
+# MITRE ATT&CK Mapping
+
+| Technique | ATT&CK ID | Detection |
+|-----------|-----------|-----------|
+| PowerShell | T1059.001 | DET-001 |
+| Windows Command Shell | T1059.003 | DET-003 |
+| Create Account | T1136 | DET-006 |
+| Account Manipulation | T1098 | DET-007 |
+| Create Service | T1543 | DET-005 |
+| Ingress Tool Transfer (Certutil) | T1105 | DET-004 |
