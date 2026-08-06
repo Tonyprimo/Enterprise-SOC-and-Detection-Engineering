@@ -1,0 +1,87 @@
+# Sprint 9 – Advanced Detection Engineering & SOC Triage
+
+## Completed
+- Expanded the Splunk detection library with four additional Windows-focused detections.
+- Created and documented:
+  - DET-008 – Suspicious Parent-Child Process
+  - DET-009 – Local Administrator Membership Added
+  - DET-010 – Windows Service Installation
+  - DET-011 – Command Interpreter Network Connection
+- Built SPL searches using Windows Security, System, and Sysmon telemetry.
+- Reviewed process relationships involving PowerShell and Windows Command Shell.
+- Tested local administrative-group membership changes using a temporary domain account.
+- Reviewed Windows service-installation telemetry from existing lab software.
+- Generated internal network activity from PowerShell for Sysmon Event ID 3 analysis.
+- Created a detection severity model for Low, Medium, High, and Critical events.
+- Added analyst-triage guidance to detection documentation.
+- Updated the detection inventory with Sprint 9 detections and validation status.
+- Created scheduled Splunk alerts for high-priority administrative and service changes.
+- Expanded the SOC Overview dashboard with advanced detection panels.
+- Created a reusable SOC analyst triage worksheet.
+
+## Skills Demonstrated
+- Advanced SPL Development
+- Windows Process Analysis
+- Parent-Child Process Investigation
+- Local Group Membership Monitoring
+- Windows Service Monitoring
+- Sysmon Network Connection Analysis
+- Alert Tuning
+- Detection Severity Classification
+- False-Positive Analysis
+- SOC Alert Triage
+- MITRE ATT&CK Mapping
+- Security Documentation
+
+## Detections Created
+- DET-008 – Suspicious Parent-Child Process
+- DET-009 – Local Administrator Membership Added
+- DET-010 – Windows Service Installation
+- DET-011 – Command Interpreter Network Connection
+
+## MITRE ATT&CK Mapping
+- T1059.001 – Command and Scripting Interpreter: PowerShell
+- T1059.003 – Command and Scripting Interpreter: Windows Command Shell
+- T1543.003 – Create or Modify System Process: Windows Service
+
+## Detection Data Sources
+- Sysmon Event ID 1 – Process Creation
+- Sysmon Event ID 3 – Network Connection
+- Windows Security Event ID 4732 – Member Added to Local Security Group
+- Windows Security Event ID 4697 – Service Installed
+- Windows System Event ID 7045 – Service Installed
+
+## Alerts Created
+- DET-009 – Local Administrator Membership Added
+- DET-010 – New Windows Service
+
+Alerts were configured as scheduled searches using five-minute search windows and result-based triggering.
+
+## Dashboard Enhancements
+Added detection-focused panels for:
+
+- Local Group Membership Changes
+- New Windows Services
+- Command Interpreter Network Activity
+- Suspicious Parent-Child Processes
+
+## Documentation Created
+- Detection documentation for DET-008 through DET-011
+- Detection severity model
+- Updated detection inventory
+- Sprint 9 analyst triage worksheet
+- SPL search files and validation notes
+
+## Challenges Overcome
+- Adapted SPL searches to raw XML Windows and Sysmon telemetry.
+- Accounted for differences between Windows Security Event ID 4697 and System Event ID 7045.
+- Distinguished normal administrative tools from potentially suspicious execution patterns.
+- Documented detections that produced zero results without falsely claiming validation.
+- Performed test-account and administrative-group cleanup after detection testing.
+
+## Outcome
+Sprint 9 expanded the lab from basic detection creation into contextual security monitoring and SOC triage. The environment now supports analysis of suspicious process relationships, privilege changes, service installation, and command-interpreter network activity.
+
+A standardized severity model and analyst triage worksheet were added to improve alert prioritization, investigation consistency, and documentation quality.
+
+**Status:**  Complete
