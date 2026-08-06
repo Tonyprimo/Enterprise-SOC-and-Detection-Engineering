@@ -1,0 +1,12 @@
+# Detection Matrix
+
+| ID | Detection | Data Source | MITRE |
+|----|-----------|------------|--------|
+| DET-001 | PowerShell Execution | Sysmon | T1059.001 |
+| DET-002 | Encoded PowerShell | PowerShell | T1059.001 |
+| DET-003 | Command Prompt | Sysmon | T1059.003 |
+| DET-004 | Certutil | Sysmon | T1105 |
+| DET-005 | Service Installation | Windows Security | T1543 |
+| DET-006 | Domain Account Creation | Windows Security | T1136 |
+| DET-007 | Local Administrator Changes | Windows Security | T1098 |
+
